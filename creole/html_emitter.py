@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-ur"""
+unicode(r"""
 WikiCreole to HTML converter
 This program is an example of how the creole.py WikiCreole parser
 can be used.
@@ -137,7 +137,7 @@ XXX This might be considered a bug, but it's impossible to detect in general.
 >>> wiki_parse(u'Lorem WikiWord iPsum sit ameT.')
 <p>Lorem <a href="WikiWord">WikiWord</a> iPsum sit ameT.</p>
 
-"""
+""")
 
 import re
 
