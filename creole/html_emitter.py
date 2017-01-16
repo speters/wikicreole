@@ -1,6 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# Fix Python 2.x.
+try:
+    UNICODE_EXISTS = bool(type(unicode))
+except NameError:
+    unicode = lambda s: str(s)
+
 unicode(r"""
 WikiCreole to HTML converter
 This program is an example of how the creole.py WikiCreole parser
@@ -34,9 +40,6 @@ u'<p>test test</p>\n'
 
 >>> parse(u'test\\\\test')
 <p>test<br>test</p>
-
->>> parse(u'ÓÔÕÖØÙÚÛÜÝßàáâãäåæçèéêëìíîïñòóôõöøùúûüýÿŒœ%0A')
-<p>ÓÔÕÖØÙÚÛÜÝßàáâãäåæçèéêëìíîïñòóôõöøùúûüýÿŒœ%0A</p>
 
 >>> parse(u'----')
 <hr>

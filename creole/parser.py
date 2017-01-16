@@ -232,8 +232,13 @@ class Parser(object):
         """Parse a fragment according to the compiled rules."""
 
         for match in rules_re.finditer(raw):
-            groups = dict((k, v) for (k, v)
+            try:
+                groups = dict((k, v) for (k, v)
                           in match.groupdict().iteritems()
+                          if v is not None)
+            except AttributeError:
+                groups = dict((k, v) for (k, v)
+                          in match.groupdict().items()
                           if v is not None)
             name = match.lastgroup
             function = getattr(self, '_%s_repl' % name)

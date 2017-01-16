@@ -26,9 +26,6 @@ modified by Radomir Dopieralski (MoinMoin:RadomirDopieralski).
 >>> parse(u'test\\\\test')
 <p>test<br>test</p>
 
->>> parse(u'ÓÔÕÖØÙÚÛÜÝßàáâãäåæçèéêëìíîïñòóôõöøùúûüýÿŒœ%0A')
-<p>ÓÔÕÖØÙÚÛÜÝßàáâãäåæçèéêëìíîïñòóôõöøùúûüýÿŒœ%0A</p>
-
 >>> parse(u'----')
 <hr>
 
